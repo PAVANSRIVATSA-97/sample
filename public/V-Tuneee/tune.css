@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Crete+Round&family=Dancing+Script&family=Varela+Round&display=swap');
+
+body
+{
+    background-color: rgb(56, 55, 54);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+
+}
+nav{
+    
+    font-family: 'Crete Round', serif;
+    font-family: 'Dancing Script', cursive;
+    
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 55px;
+    background-color: rgba(0, 178, 121, 0.994);  
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    border-radius:45px;
+    
+    
+}
+.logo img{
+    width: 50px;
+    padding:0 3px;
+    border-radius: 55%;
+    border: none;
+
+}
+.logo{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+nav ul li{
+padding: 0px 5px;
+}
+
+nav li a{
+text-decoration: none;
+color: black;
+font-size: 20px;
+padding: 20px;
+}
+
+ /* nav li a:hover{
+    color: rgb(255, 0, 0);
+}*/
+
+.bottom{
+    position:sticky;
+    height:130px;
+    background-color: black;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+
+
+}
+
+.box{ 
+    min-height: 70vh;
+    background-color: black;
+    color: rgb(10, 10, 10);
+    font-family: 'Covered By Your Grace', cursive;
+    font-family: 'Crete Round', serif;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    width: 70%;
+    margin: 23px auto;
+    border-radius: 10px;
+    padding: 30px;
+    background-image:url(background.png);
+    background-size: cover;
+    background-position: right;
+ 
+    
+
+}
+#duration{
+    width: 80vw;
+    cursor: pointer;
+}
+.icons{
+    
+    margin-top: 15px;
+    
+}
+.icons i{
+    padding:12px;
+    cursor: pointer;
+}
+.songItem{
+    height:50px;
+    display:flex;
+    background-color: black;
+    color: white;
+    margin: 12px 0px;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding-right: 20px;
+    border-radius: 50PX;
+    font-size: 20px;
+  
+}
+.songItem img{
+    width: 33px;
+    margin:0 23px;
+    border-radius: 50%;
+}
+.time{
+    margin:0px 23px;
+}
+span .time i{
+    padding-left: 10px;
+    cursor: pointer;
+}
+.songitemcontainer{
+    
+
+margin-top:44px;
+
+}
+.songinfo{
+    position: absolute;
+    left: 10vw;
+
+}
+.songinfo img{
+    width: 120px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+::-webkit-scrollbar{
+    width:15px;
+}
+::-webkit-scrollbar-track{
+    /* background-color: black; */
+    border-radius: 30px;
+}
+::-webkit-scrollbar-thumb{
+    background-color:rgba(0, 178, 121, 0.994);  
+    border-radius: 30px;
+    
+}
+

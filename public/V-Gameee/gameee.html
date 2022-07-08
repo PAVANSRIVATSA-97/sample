@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-GAMEEE</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" href="./ic_launcher.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+        </style>
+</head>
+<body class="all">
+    <header>
+        <div class="nav">
+            <h1 class="pavan">V-GAMEEE</h1>
+        
+            <ul>
+        
+                <li><a href="../V-Movieee/index.html">V-Movieee</a></li>
+                <li><a href="../V-Gameee/gameee.html">V-Gameee</a></li>
+                <li><a href="../V-Tuneee/tune.html">V-Tuneee</a></li>
+                <li><a href="../login.html">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="flexbox">
+        
+        <div class="card">
+        
+           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Wild_tic-tac-toe.svg/220px-Wild_tic-tac-toe.svg.png" class="card-img" alt="">
+           <p class="text">Tic Tac Toe is a two-player game in which the objective is to take turns and mark the correct spaces in a 3x3 (or larger) grid.</p>
+           <button class="btn" onclick="game() ">Play</button>
+        </div>
+
+       <div class="card2">
+        <img src="./Screenshot (7).png" class="card-img2" alt="">
+        <p class="text">Snake is a simple and classic game where the player maneuvers a growing line that becomes a primary obstacle to itself.</p>
+        <button class="btn" onclick="game2()">Play</button>
+       </div>
+
+       <div class="card">
+        <img src="./Screenshot (11).png" class="card-img" alt="">
+        <p class="text">Save the Galaxy from alien swarm attack.The goal is to defeat wave of decending aliens with horizontaly moving space ship.</p>
+        <button class="btn" onclick="game3()">Play</button>
+       </div>
+    </div>
+    <script>
+        function game()
+        {
+            window.open(
+                "http://127.0.0.1:5500/public/V-Gameee/tic%20tac%20toe/index.html", "_blank"
+            );
+        }
+        function game2()
+        {
+            window.open(
+                "http://127.0.0.1:5500/public/V-Gameee/Javascript-Snake-Game-master/Javascript-Snake-Game-master/index.html", "_blank");
+        }
+        function game3() {
+            window.open(
+            "http://127.0.0.1:5500/public/V-Gameee/space-invaders-main/space-invaders-main/index.html", "_blank");
+
+        }
+        
+    </script>   
+        
+    
+</body>
+</html>
