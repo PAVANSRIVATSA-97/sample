@@ -1,263 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="icon" href="./ic_launcher.png">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: #333;
-          border-radius: 30px;
-          width:80%;
-        }
-
-        li {
-          float: left;
-          font-family: 'Poppins', sans-serif;
-        }
-
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-
-
-        li a:hover {
-          background-color: #111;
-          color: red;
-          
-        }
-        
-        body{
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            background: url("https://wallpaperaccess.com/full/5117569.jpg");
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            /* background-position: fixed; */
-        
-            }
-
-
-        h1{
-            color:white;
-            margin:5px 0 -1px 0; 
-            font-size: 60px;
-        }
-
-        .outbox{
-            border:3px solid white;
-            border-radius: 20px;
-            width: 700px;
-            height: 500px;
-            /* background-color: rgb(84, 136, 210);  */
-            display: flex; 
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            padding-left: 40px;
-
-
-        }
-        .box{
-            background-color:white;
-            border-radius: 20px;
-            width: 390px;
-            height: 480px;
-            margin-left: 45px; 
-            margin-top: 1px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            
-        
-        }
-        .text{
-            color: whitesmoke;
-            display: flex;
-            border: 5px solid black;
-
-        }
-
-        p{
-            color:black ;
-            font-size: 28px;
-            margin:5px 0 -5px 0; 
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        a {
-          color: dodgerblue;
-        }
-        .welcome{
-            font-size: 60px;
-            color: white;
-            margin:13px 0 20px 0; 
-        }
-        .color{
-            color: white;
-            font-family: 'Poppins', sans-serif;
-        }
-        .line{
-            border: 3px solid #333;;
-            background-color: white;
-            display: inline-flex;
-            font-family: 'Poppins', sans-serif;
-            width: 100%;
-            border-left: 0px;
-            border-right: 0px;
-            display: flex;
-            text-align: center;
-            align-items: center;
-            padding-bottom: 5px;
-            padding-left: 5px;
-            height: 37px;
-            /* border-radius: 30px; */
-        }
-        .insta{
-            margin-left: 600px;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            align-items: center;
-            margin-top: 25px;
-            display: flex;
-        }
-        span{
-            margin-left: 10px;
-            padding-bottom: 10px;
-            font-family: 'Poppins', sans-serif;
-
-        }
-    
-    ::-webkit-scrollbar{
-        width:15px;
-    }
-    ::-webkit-scrollbar-track{
-        /* background-color: black; */
-        border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb{
-        background-color: #333;
-        border-radius: 10px;
-        
-    }
-    ::-webkit-scrollbar-thumb:hover{
-        background-color:lightcoral ;
-        
-    }
-    .threee{
-        color: dodgerblue;
-        text-decoration: dashed;
-    }
-    input[type=submit], label[for=rememberMe]{
-        cursor: pointer;
-
-    }
-    .line #rights{
-            text-align: center;
-            
-            color:black;
-            margin-bottom: 0.3px;
-            font-size: 20px;
-            
-        }
-        .line .facebook{
-            margin-left: 40px;
-            margin-top: 8px;
-            
-        }
-        .line h3{
-            margin-left: 30px;
-            margin-top: 25px;
-        }
-    </style>
-</head>
-<body>
+    <link rel="icon" href="./Images/ic_launcher.png" />
+    <link rel="stylesheet" href="./CSS/login.css" />
+  </head>
+  <body>
     <script language="">
-        function validate(form){
-            if(form.username.value.length==0){
-                alert("Enter username!");
-                form.username.focus();
-                return false;
-            }
-    
-            if(form.userpassword.value.length==0){
-                alert("Enter password");
-                form.userpassword.focus();
-                return false;
-            }
-    
-            return true;
+      function validate(form) {
+        if (form.username.value.length == 0) {
+          alert("Enter username!");
+          form.username.focus();
+          return false;
         }
+
+        if (form.userpassword.value.length == 0) {
+          alert("Enter password");
+          form.userpassword.focus();
+          return false;
+        }
+
+        return true;
+      }
     </script>
-    <h1 class="welcome"><center>WELCOME TO <div class="threee"><u>THREEE</u></div></center></h1>
+    <!-- <script src="username.js"></script> -->
+    <h1 class="welcome">
+      <center>
+        WELCOME TO
+        <div class="threee"><u>THREEE</u></div>
+      </center>
+    </h1>
     <ul>
-        
-        <li><a href="./login.html">Login</a></li>
-        <li><a href="./index.html">Register</a></li>
-        <li style="float:right"><a class="active" href="./about.html">About</a></li>
+      <li><a href="./login.html">Login</a></li>
+      <li><a href="./index.html">Register</a></li>
+      <li style="float: right">
+        <a class="active" href="./about.html">About</a>
+      </li>
     </ul>
-    <hr>
+    <hr />
     <div class="outbox">
-        <div class="img">
-            <img src="./ic_launcher.png"padding=25px >
-            <H1>THREEE</H1>
-            <br>
-            <!-- <p class="color"> THE NEW DEFINATION OF ENTERTAINMENT</p> -->
-            <br>
-        </div>
-        <div class="box">
-            <center>
-            <img src="./login3.png"padding=25px height="140px" width="140px"  >
-            <h2><u>LOGIN</u></h2>
-            <form method="post" action="/login" onsubmit="return validate(this)">
-            <p>User-Name: <input type="text" name="username"></p>
-            <p>Password :  <input type="password" name="userpassword"></p>
-            <p><input type="checkbox" value="lsRememberMe" id="rememberMe"> 
-            <label for="rememberMe">Remember me</label></p>
-            <p><input type="submit" value="Login" onclick="lsRememberMe()"></p>
-            <p>doesn't have an account? <a href="./registration.html">Register</a></p>
-            </form>
-            </center>
-        </div>
-    </div>
-    <br>
-    
-    </body>
-    
-    <footer class="line">
-        <p id="rights">© ALL RIGHTS RESERVED</p>
-        <span>
-
-            <p>
-                <a href="https://www.instagram.com/pavansrivatsa97/?hl=en">
-                    <div class="insta">
-                        <img src="./insta.jpg" alt="" height="30px" width="30px">
-                    </div>
-                </a>
-                
+      <div class="img">
+        <img src="./Images/ic_launcher.png" padding="25px" />
+        <h1>THREEE</h1>
+        <br />
+        <!-- <p class="color"> THE NEW DEFINATION OF ENTERTAINMENT</p> -->
+        <br />
+      </div>
+      <div class="box">
+        <center>
+          <img
+            src="./Images/login3.png"
+            padding="25px"
+            height="140px"
+            width="140px"
+          />
+          <h2><u>LOGIN</u></h2>
+          <form method="post" action="/login" onsubmit="return validate(this)">
+            <p class="name">
+              Email : <input type="text" name="username" id="uname" />
             </p>
-        </span>
-        <a href="https://www.facebook.com/pavan.rock.97/">
-            <div class="facebook">
-                <img src="./facebook.png" alt="facebook" height="30px" width="30px">
-        </div>
-        </a>
-        <h3 >Email : threee159@gmail.com</h3>
-    </footer>
+            <p class="name">
+              Password : <input type="password" name="userpassword" />
+            </p>
+            <!-- <p class="name">
+              <input type="checkbox" id="rememberme" name="rememberme" />
+              <label for="rememberMe">Remember me</label>
+            </p> -->
+            <p class="name">
+              <input type="submit" value="Login" onclick="lsRememberMe()" />
+            </p>
+            <p class="">
+              doesn't have an account?
+              <a href="./index.html">Register</a>
+            </p>
+          </form>
+        </center>
+      </div>
+    </div>
+    <br />
+  </body>
 
+  <footer class="line">
+    <p id="rights">© ALL RIGHTS RESERVED</p>
+    <span>
+      <p>
+        <a href="https://www.instagram.com/pavansrivatsa97/?hl=en">
+          <div class="insta">
+            <img src="./Images/insta.jpg" alt="" height="30px" width="30px" />
+          </div>
+        </a>
+      </p>
+    </span>
+    <a href="https://www.facebook.com/pavan.rock.97/">
+      <div class="facebook">
+        <img
+          src="./Images/facebook.png"
+          alt="facebook"
+          height="30px"
+          width="30px"
+        />
+      </div>
+    </a>
+    <h3>Email : threee159@gmail.com</h3>
+  </footer>
 </html>

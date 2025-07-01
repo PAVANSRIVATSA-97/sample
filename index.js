@@ -1,67 +1,92 @@
-var express=require("express")
-var bodyParser=require("body-parser")
-var mongoose=require("mongoose")
+var express = require("express");
+var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+var ejs = require("ejs");
+var fs = require("fs");
 
+const app = express();
 
-const app=express()
+app.use(bodyParser.json());
+app.use(express.static("public"));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 
-app.use(bodyParser.json())
-app.use(express.static('public'))
-app.use(bodyParser.urlencoded({
-    extended:true
-}))
-
-mongoose.connect('mongodb://Localhost:27017/mydb',{
-    useNewUrLParser:true,
-    useUnifiedTopology:true
+mongoose.connect("mongodb://localhost:27017/mydb", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
-var db=mongoose.connection;
+var db = mongoose.connection;
 
-db.on('error',()=>console.log("Error in connecting to database"));
-db.once('open',()=>console.log("Connected to database"));
+db.on("error", () => console.log("Error in connecting to database"));
+db.once("open", () => console.log("Connected to database"));
 
-app.post("/signup",(req,res)=>{
-    var email=req.body.email;
-    var password=req.body.psw;
-    var repeatpassword=req.body['psw-repeat'];
-    if(password != repeatpassword){
-        return res.status(404).send("Passwords do not match")
+app.post("/signup", (req, res) => {
+  const { email, psw, "psw-repeat": repeatpassword } = req.body;
+
+  if (psw !== repeatpassword) {
+    return res.status(400).send("Passwords do not match");
+  }
+
+  const data = {
+    email,
+    password: psw,
+  };
+
+  db.collection("users").insertOne(data, (err, collection) => {
+    if (err) {
+      return res.status(500).send("Error inserting record");
     }
+    console.log("Record inserted Successfully");
+    redirect_to_home(email, res);
+  });
+});
 
-    var data={
-        "email":email,
-        "password":password,
+function redirect_to_home(username, res) {
+  fs.readFile("./public/home.html", "utf-8", function (err, content) {
+    if (err) {
+      console.log(err);
+      res.end(err);
+      return;
     }
+    const user = username.split("@")[0];
+    const renderedHtml = ejs.render(content, { user });
 
-    db.collection('users').insertOne(data,(err,collection)=>{
-        if(err){
-          throw err;  
+    db.collection("users")
+      .find({ email: username })
+      .toArray()
+      .then((data) => {
+        if (!data || data.length === 0) {
+          return res.status(404).send("Not a registered user");
+        } else {
+          return res.send(renderedHtml);
         }
-        console.log("Record inserted Succesfully");
-    });
+      })
+      .catch((error) => {
+        console.error(error);
+        return res.status(500).send("Database error");
+      });
+  });
+}
 
-    return res.redirect('home.html')
-})
-app.get("/", (req,res) =>{
-    res.set({
-       "Allow-access-Allow-Origin" :'*'
+app.get("/", (req, res) => {
+  res.set({ "Allow-access-Allow-Origin": "*" });
+  return res.redirect("index.html");
+});
 
-    })
-    return res.redirect('index.html');
-}).listen(3000);
+app.post("/login", (req, res) => {
+  const { username, userpassword } = req.body;
+  const data = {
+    email: username,
+    password: userpassword,
+  };
+  redirect_to_home(username, res);
+});
 
-app.post('/login', (req, res)=>{
-    username = req.body.username
-    password = req.body.userpassword
-    data = {
-        "email":username,
-        "password":password,
-    }
-    let v = db.collection('users').find(data).toArray().then((data, err)=>{
-        if(err || data.length == 0) return res.status(404).send("Not a registered user")
-        else return res.redirect('home.html')
-    })
-})
-
-console.log("listening on port 3000")
+const port = 3000;
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
+});

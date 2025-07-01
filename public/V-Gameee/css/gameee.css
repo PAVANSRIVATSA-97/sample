@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap");
+
+ul {
+  list-style-type: none;
+  margin: 5px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  border-radius: 50px;
+  width: 100%;
+  /* height: 45px; */
+}
+
+li {
+  float: left;
+  font-family: "Poppins", sans-serif;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+  color: red;
+}
+.heading {
+  color: rgb(255, 0, 0);
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  font-family: "Merriweather", serif;
+  padding-right: 0px;
+  padding-left: 35px;
+
+  /* border: 2px solid red; */
+}
+.main {
+  display: flex;
+  width: 100%;
+  /* background-color:black; */
+  height: 100px;
+  /* border: 2px solid red; */
+}
+
+.icon {
+  padding: 1rem;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin: 20px;
+  position: static;
+  /* border: 2px solid red; */
+  margin-left: 480px;
+  padding-right: 0px;
+}
+
+.all {
+  background-image: url("game.jpg");
+}
+.card {
+  border: 5px solid rgb(97, 95, 85);
+  margin: 50px 5px;
+
+  opacity: 80%;
+  width: 400px;
+  color: black;
+  font-size: 20px;
+  padding-top: 10px;
+  border-radius: 20px;
+  background-color: rgb(190, 180, 180);
+  font-family: "Libre Baskerville", serif;
+}
+
+.text {
+  margin: 10px 20px 10px 9px;
+}
+.btn {
+  margin-left: 140px;
+  width: 110px;
+  padding: 3px 5px;
+  font-size: 20px;
+  border: 2px solid rgb(97, 95, 85);
+  border-radius: 10px;
+  color: black;
+
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  font-family: "Libre Baskerville", serif;
+  cursor: pointer;
+}
+.btn:hover {
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.829);
+  color: rgba(245, 245, 245, 0.868);
+  letter-spacing: 4px;
+  text-align: center;
+  padding-left: 3px;
+}
+.card-img {
+  width: 80%;
+  border: 2px solid rgb(97, 95, 85);
+  height: 300px;
+  margin-left: 35px;
+  border-radius: 15px;
+  opacity: 80%;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 0px; */
+}
+
+.card-img2 {
+  border: 2px solid rgb(97, 95, 85);
+  border-radius: 10px;
+  height: 295px;
+  margin-left: 48px;
+}
+
+.card2 {
+  border: 5px solid rgb(97, 95, 85);
+  margin: 50px 5px 52px 5px;
+  height: 468px;
+  width: 400px;
+  color: black;
+  font-size: 20px;
+  padding-top: 10px;
+  border-radius: 20px;
+  background-color: rgb(190, 180, 180);
+  font-family: "Libre Baskerville", serif;
+  opacity: 80%;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  /* background-color: rgba(68, 108, 115, 0.605); */
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(190, 180, 180);
+  border-radius: 30px;
+}
